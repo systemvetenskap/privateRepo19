@@ -35,7 +35,7 @@ namespace FL2
             // birthYear = txtFirstName.Text;
             birthYear = int.Parse(txtBirthYear.Text);
 
-
+            // kommentar
             int age;
             DateTime date = DateTime.Now;
             int year = date.Year;
