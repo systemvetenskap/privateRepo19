@@ -42,6 +42,16 @@ namespace FL2
 
             age = year - birthYear;
 
+            age += 5;
+            int numberOfGuesses = 0;
+
+            numberOfGuesses += 1;
+            numberOfGuesses++;
+            numberOfGuesses = numberOfGuesses + 1;
+
+
+            numberOfGuesses--;
+
             //txtBirthYear.Text = age.ToString();
             txtBirthYear.Text = $"Hej {firstName}. Du är {age} år gammal";
             // MessageBox.Show($"Hej {firstName}. Du är {age} år gammal");
