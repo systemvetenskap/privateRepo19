@@ -1,0 +1,39 @@
+﻿<Window x:Class="Yatzy.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Yatzy"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" FontSize="25" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel Margin="0,25,656,45" Orientation="Vertical"  Width="105">
+            <Label x:Name="captionOnes" Content="Ettor" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="#FFFF4E96"/>
+            <Label x:Name="captionTwos" Content="Tvåor" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="#FFFF4E96"/>
+            <Label x:Name="captionThrees" Content="Treor" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="#FFFF4E96"/>
+            <Label x:Name="captionFours" Content="Fyror" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="#FFFF4E96"/>
+            <Label x:Name="captionFives" Content="Femmor" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="#FFFF4E96"/>
+            <Label x:Name="captionSixes" Content="Sexor" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="#FFFF4E96"/>
+            <Label x:Name="captionBonus" Content="Bonus" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="#FFFF4E96" FontWeight="Bold"/>
+            <Label x:Name="captionTotal" Content="Total" HorizontalAlignment="Right" VerticalAlignment="Top" Foreground="#FFFF4E96" FontWeight="Bold"/>
+        </StackPanel>
+
+        <TextBox x:Name="txtOnes"  HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" VerticalAlignment="Top" Width="46" Margin="136,31,0,0"/>
+        <TextBox x:Name="txtTwos"  HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" VerticalAlignment="Top" Width="46" Margin="136,74,0,0"/>
+        <TextBox x:Name="txtThrees"   HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" VerticalAlignment="Top" Width="46" Margin="136,117,0,0"/>
+        <TextBox x:Name="txtFours"   HorizontalAlignment="Left" Height="36" TextWrapping="Wrap"  VerticalAlignment="Top" Width="46" Margin="136,161,0,0"/>
+        <TextBox x:Name="txtFives"  HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" VerticalAlignment="Top" Width="46" Margin="136,203,0,0"/>
+        <TextBox x:Name="txtSixes"   HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" VerticalAlignment="Top" Width="46" Margin="136,246,0,0"/>
+        <TextBox x:Name="txtBonus"   HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" VerticalAlignment="Top" Width="46" Margin="136,289,0,0"/>
+        <TextBox x:Name="txtTotal" HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" Margin="136,331,0,0"/>
+        <Button x:Name="btnRollDices" Content="Kasta tärningar" HorizontalAlignment="Left" Margin="268,331,0,0" VerticalAlignment="Top" Width="229" Click="BtnRollDices_Click"/>
+        <WrapPanel HorizontalAlignment="Left" Height="130" Margin="312,135,0,0" VerticalAlignment="Top" Width="362" Orientation="Horizontal">
+            <Label x:Name="lblDieOne" Content="X" FontSize="72" Margin="0,0,5,0"/>
+            <Label x:Name="lblDieTwo" Content="X" FontSize="72" Margin="0,0,5,0"/>
+            <Label x:Name="lblDieThree" Content="X" FontSize="72" Margin="0,0,5,0"/>
+            <Label x:Name="lblDieFour" Content="X" FontSize="72" Margin="0,0,5,0"/>
+            <Label x:Name="lblDieFive" Content="X" FontSize="72"  Margin="0,0,5,0"/>
+        </WrapPanel>
+
+    </Grid>
+</Window>
