@@ -31,29 +31,61 @@ namespace Yatzy
 
         private void BtnRollDices_Click(object sender, RoutedEventArgs e)
         {
-            int dieOne, dieTwo, dieThree, dieFour, dieFive, totalSum, bonus;
+            int dieOne, dieTwo, dieThree, dieFour, dieFive, totalSum = 0, bonus;
+
+            // Refaktorera
+
+            // 5 separata tärningar? nej tack
+
+            // de hör ihop som en collection --> array
+
+            int[] dices = new int[5];
+
+            for (int i = 0; i < 5; i++)
+            {
+                dices[i] = random.Next(1, 7); // slumpa fram ett tal mellan 1 och 6
+            }
+
+            // beräkna totalsumman
+            foreach (int die in dices)
+            {
+                totalSum += die;
+            }
+
+
+
+
+
+
+
+
+
+
+
             // uppdrag
             // kasta en tärning och presentera resultatet 
 
+            /*
             dieOne = random.Next(1, 7); // slumpa fram ett tal mellan 1 och 6
             dieTwo = random.Next(1, 7); // slumpa fram ett tal mellan 1 och 6
             dieThree = random.Next(1, 7); // slumpa fram ett tal mellan 1 och 6
             dieFour = random.Next(1, 7); // slumpa fram ett tal mellan 1 och 6
             dieFive = random.Next(1, 7); // slumpa fram ett tal mellan 1 och 6
+           */
 
             // Uppdrag Presentera resultatet av slumpgeneratorn
             // alla tärningar ska visas i gränssnittet
-            lblDieOne.Content = dieOne; 
-            lblDieTwo.Content = dieTwo; 
-            lblDieThree.Content = dieThree; 
-            lblDieFour.Content = dieFour;
-            lblDieFive.Content = dieFive;
+            lblDieOne.Content = dices[0]; 
+            lblDieTwo.Content = dices[1];  
+            lblDieThree.Content = dices[2]; 
+            lblDieFour.Content = dices[3];
+            lblDieFive.Content = dices[4];
 
             // Beräkna totalsumman av alla tärningar
-            totalSum = dieOne + dieTwo + dieThree + dieFour + dieFive;
+          //  totalSum = dieOne + dieTwo + dieThree + dieFour + dieFive;
             //totalSum = 62; // hårdkodat testdata
             // uppdrag 2. Får man bonus?
-
+            
             if (totalSum >= 63)
             {
                 bonus = 50;
@@ -65,7 +97,6 @@ namespace Yatzy
             }
             txtBonus.Text = bonus.ToString();
             txtTotal.Text = totalSum.ToString();
-
         }
     }
 }
