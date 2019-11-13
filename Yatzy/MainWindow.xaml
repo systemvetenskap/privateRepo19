@@ -26,7 +26,7 @@
         <TextBox x:Name="txtSixes"   HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" VerticalAlignment="Top" Width="46" Margin="136,246,0,0"/>
         <TextBox x:Name="txtBonus"   HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" VerticalAlignment="Top" Width="46" Margin="136,289,0,0"/>
         <TextBox x:Name="txtTotal" HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" Margin="136,331,0,0"/>
-        <Button x:Name="btnRollDices" Content="Kasta tärningar" HorizontalAlignment="Left" Margin="268,331,0,0" VerticalAlignment="Top" Width="229" Click="BtnRollDices_Click"/>
+        <Button x:Name="btnRollDices" Content="Kasta tärningar" HorizontalAlignment="Left" Margin="506,328,0,0" VerticalAlignment="Top" Width="229" Click="BtnRollDices_Click"/>
         <WrapPanel HorizontalAlignment="Left" Height="130" Margin="312,135,0,0" VerticalAlignment="Top" Width="362" Orientation="Horizontal">
             <Label x:Name="lblDieOne" Content="X" FontSize="72" Margin="0,0,5,0"/>
             <Label x:Name="lblDieTwo" Content="X" FontSize="72" Margin="0,0,5,0"/>
@@ -34,6 +34,7 @@
             <Label x:Name="lblDieFour" Content="X" FontSize="72" Margin="0,0,5,0"/>
             <Label x:Name="lblDieFive" Content="X" FontSize="72"  Margin="0,0,5,0"/>
         </WrapPanel>
+        <Button x:Name="btnSaveScore" Content="Spara poäng" HorizontalAlignment="Left" Margin="213,117,0,0" VerticalAlignment="Top" Width="158"/>
 
     </Grid>
 </Window>

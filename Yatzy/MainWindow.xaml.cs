@@ -31,20 +31,22 @@ namespace Yatzy
 
         private void BtnRollDices_Click(object sender, RoutedEventArgs e)
         {
+            // skapa ett objekt av vår GameEngine (kan även kallas instans)
+            // alltså som vi gjorde med Random
+            GameEngine gameEngine = new GameEngine();
+
             int dieOne, dieTwo, dieThree, dieFour, dieFive, totalSum = 0, bonus;
 
+            dieOne = gameEngine.RoleDie();
+            random.Next();
             // Refaktorera
 
             // 5 separata tärningar? nej tack
 
             // de hör ihop som en collection --> array
 
-            int[] dices = new int[5];
+            int[] dices = gameEngine.RoleDices();
 
-            for (int i = 0; i < 5; i++)
-            {
-                dices[i] = random.Next(1, 7); // slumpa fram ett tal mellan 1 och 6
-            }
 
             // beräkna totalsumman
             foreach (int die in dices)
