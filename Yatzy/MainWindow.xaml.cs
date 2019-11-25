@@ -22,83 +22,33 @@ namespace Yatzy
     {
         // En slumpgenerator vid namn random
         Random random = new Random();
+        GameEngine gameEngine;
+
 
         public MainWindow()
         {
+            // Den här koden körs en och endast en gång
+            // nämligen när objektet skapas
             InitializeComponent();
-           
+            gameEngine = new GameEngine();
         }
+
+        private void SågaBräda()
+        {
+        }
+
 
         private void BtnRollDices_Click(object sender, RoutedEventArgs e)
         {
-            // skapa ett objekt av vår GameEngine (kan även kallas instans)
-            // alltså som vi gjorde med Random
-            GameEngine gameEngine = new GameEngine();
-
-            int dieOne, dieTwo, dieThree, dieFour, dieFive, totalSum = 0, bonus;
-
-            dieOne = gameEngine.RoleDie();
-            random.Next();
-            // Refaktorera
-
-            // 5 separata tärningar? nej tack
-
-            // de hör ihop som en collection --> array
-
             int[] dices = gameEngine.RoleDices();
+        }
 
-
-            // beräkna totalsumman
-            foreach (int die in dices)
-            {
-                totalSum += die;
-            }
-
-
-
-
-
-
-
-
-
-
-
-            // uppdrag
-            // kasta en tärning och presentera resultatet 
-
-            /*
-            dieOne = random.Next(1, 7); // slumpa fram ett tal mellan 1 och 6
-            dieTwo = random.Next(1, 7); // slumpa fram ett tal mellan 1 och 6
-            dieThree = random.Next(1, 7); // slumpa fram ett tal mellan 1 och 6
-            dieFour = random.Next(1, 7); // slumpa fram ett tal mellan 1 och 6
-            dieFive = random.Next(1, 7); // slumpa fram ett tal mellan 1 och 6
-           */
-
-            // Uppdrag Presentera resultatet av slumpgeneratorn
-            // alla tärningar ska visas i gränssnittet
-            lblDieOne.Content = dices[0]; 
-            lblDieTwo.Content = dices[1];  
-            lblDieThree.Content = dices[2]; 
-            lblDieFour.Content = dices[3];
-            lblDieFive.Content = dices[4];
-
-            // Beräkna totalsumman av alla tärningar
-          //  totalSum = dieOne + dieTwo + dieThree + dieFour + dieFive;
-            //totalSum = 62; // hårdkodat testdata
-            // uppdrag 2. Får man bonus?
+        private void BtnSaveScore_Click(object sender, RoutedEventArgs e)
+        {
+            int score = int.Parse(txtOnes.Text);
+            gameEngine.SaveScore(score, 1);
             
-            if (totalSum >= 63)
-            {
-                bonus = 50;
-                totalSum += bonus;
-            }
-            else
-            {
-                bonus = 0;
-            }
-            txtBonus.Text = bonus.ToString();
-            txtTotal.Text = totalSum.ToString();
+
         }
     }
 }

@@ -34,7 +34,7 @@
             <Label x:Name="lblDieFour" Content="X" FontSize="72" Margin="0,0,5,0"/>
             <Label x:Name="lblDieFive" Content="X" FontSize="72"  Margin="0,0,5,0"/>
         </WrapPanel>
-        <Button x:Name="btnSaveScore" Content="Spara poäng" HorizontalAlignment="Left" Margin="213,117,0,0" VerticalAlignment="Top" Width="158"/>
+        <Button x:Name="btnSaveScore" Content="Spara poäng" HorizontalAlignment="Left" Margin="210,117,0,0" VerticalAlignment="Top" Width="158" Click="BtnSaveScore_Click"/>
 
     </Grid>
 </Window>

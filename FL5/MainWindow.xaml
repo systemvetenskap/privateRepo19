@@ -11,6 +11,7 @@
         <TextBox x:Name="txtValue" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Margin="102,68,0,0"/>
         <Button x:Name="button1" Content="Veckodagar" HorizontalAlignment="Left" Margin="476,129,0,0" VerticalAlignment="Top" Width="178" Height="66" Click="Button1_Click"/>
         <Button x:Name="button2" Content="Button" HorizontalAlignment="Left" Margin="102,111,0,0" VerticalAlignment="Top" Width="75" Click="Button2_Click"/>
+        <ListBox x:Name="lstWeekDays" HorizontalAlignment="Left" Height="171" Margin="476,213,0,0" VerticalAlignment="Top" Width="285"/>
 
     </Grid>
 </Window>

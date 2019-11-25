@@ -23,7 +23,12 @@ namespace FL5
 
         int sum = 0;
         int[] values = new int[5];
-        int[] result; 
+        int[] result;
+
+        string[] weekdays = new string[]
+            {
+                "Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag"
+            };
 
         int index = 0;
 
@@ -99,14 +104,35 @@ namespace FL5
 
         }
 
+
+        private void UpdateListbox()
+        {
+            lstWeekDays.ItemsSource = null;
+            lstWeekDays.ItemsSource = weekdays;
+        }
+
+        private void ClearTextboxes()
+        {
+
+        }
+
+
+
+
+
+
         private void Button1_Click(object sender, RoutedEventArgs e)
         {
-            string[] weekdays = new string[]
-            {
-                "Monday", "Tuesday"
-            };
 
+            UpdateListbox();
+            index = 3;
+            weekdays[index] = "Monday";
             string name = "Erik";
+
+            UpdateListbox();
+            ClearTextboxes();
+
+
             //MessageBox.Show(name[0].ToString());
 
             //foreach (char c in name)
