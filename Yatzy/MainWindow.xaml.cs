@@ -46,7 +46,12 @@ namespace Yatzy
         private void BtnSaveScore_Click(object sender, RoutedEventArgs e)
         {
             int score = int.Parse(txtOnes.Text);
-            gameEngine.SaveScore(score, 1);
+
+            // Eriks galet coola ifsats
+            if (!gameEngine.SaveScore(score, 2))
+            {
+                // nej
+            }
             
 
         }

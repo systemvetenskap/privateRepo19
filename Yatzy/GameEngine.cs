@@ -11,7 +11,9 @@ namespace Yatzy
         // instansvariabel
         private Random random = new Random(); // skapa slumpgenerator = hemlig för omvärlden
 
-        
+        public int hej { get; protected set; }
+
+
         // publika properties
         public int Ones { get; private set; }
         public int Twos { get; private set; }
