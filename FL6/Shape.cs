@@ -12,6 +12,16 @@ namespace FL6
     /// </summary>
     class Shape 
     {
+
+        private int numberOfCorners;
+
+        public int NumberOfCorners
+        {
+            get { return numberOfCorners; }
+            set { numberOfCorners = value; }
+        }
+
+
         public double Height { get; set; }
         public double Width { get; set; }
         public string Type { get; protected set; }

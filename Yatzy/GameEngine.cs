@@ -11,9 +11,6 @@ namespace Yatzy
         // instansvariabel
         private Random random = new Random(); // skapa slumpgenerator = hemlig för omvärlden
 
-        public int hej { get; protected set; }
-
-
         // publika properties
         public int Ones { get; private set; }
         public int Twos { get; private set; }
@@ -22,7 +19,7 @@ namespace Yatzy
         public int Fives { get; private set; } // private setter 
         public int Sixes { get; private set; }
         public int Bonus { get; private set; }
-        public int Total { get; private set; } // låt denna använda en metod. Det är ingen variabel
+        public int Total => CalculateSum();
 
         private int CalculateSum()
         {
@@ -94,7 +91,6 @@ namespace Yatzy
                 {
                     case 1:
                         Ones = score;
-                        Total += score;
                         break;
                     case 2:
                         Twos = score;
@@ -123,7 +119,30 @@ namespace Yatzy
            return random.Next(1, 7);
         }
 
+        // vi har gjort en överlagrad metod
+        // samma metod finns i flera olika varianter.
+        // variant = olika antal, eller typ, av indataparmeter
+        /// <summary>
+        /// Kasta alla tärningar
+        /// </summary>
+        /// <returns></returns>
         public int[] RoleDices()
+        {
+            int[] dices = new int[5];
+
+            for (int i = 0; i < 5; i++)
+            {
+                dices[i] = RoleDie();
+            }
+            return dices;
+
+        }
+        /// <summary>
+        /// Kasta de tärningar som vi inte har sparat
+        /// </summary>
+        /// <param name="savedDices"></param>
+        /// <returns></returns>
+        public int[] RoleDices(bool[] savedDices)
         {
             int[] dices = new int[5];
 

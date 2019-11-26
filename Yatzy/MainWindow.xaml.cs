@@ -32,27 +32,39 @@ namespace Yatzy
             InitializeComponent();
             gameEngine = new GameEngine();
         }
+        #region Gränssnittsmetoder
 
-        private void SågaBräda()
+        private void DisplayDices(int[] input)
         {
+            lblDieOne.Content = input[0].ToString();
+            lblDieTwo.Content = input[1].ToString();
+            lblDieThree.Content = input[2].ToString();
+            lblDieFour.Content = input[3].ToString();
+            lblDieFive.Content = input[4].ToString();
         }
+
+        private bool[] GetSavedDices()
+        {
+            bool[] isSaved = new bool[5];
+            isSaved[0] = (bool)chkDieOne.IsChecked;
+            isSaved[1] = (bool)chkDieTwo.IsChecked;
+            isSaved[2] = (bool)chkDieThree.IsChecked;
+            isSaved[3] = (bool)chkDieFour.IsChecked;
+            isSaved[4] = (bool)chkDieFive.IsChecked;
+            return isSaved;
+        }
+        #endregion
 
 
         private void BtnRollDices_Click(object sender, RoutedEventArgs e)
         {
-            int[] dices = gameEngine.RoleDices();
+            bool[] savedDices = GetSavedDices();
+            DisplayDices(gameEngine.RoleDices());
         }
 
         private void BtnSaveScore_Click(object sender, RoutedEventArgs e)
         {
             int score = int.Parse(txtOnes.Text);
-
-            // Eriks galet coola ifsats
-            if (!gameEngine.SaveScore(score, 2))
-            {
-                // nej
-            }
-            
 
         }
     }

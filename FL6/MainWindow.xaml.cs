@@ -36,107 +36,23 @@ namespace FL6
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
-            // skapa objekt
-            Rectangle rectangle = new Rectangle()
-            {
-                Height = 2,
-                Width = 2
-            };
-
-            Rectangle rectangle2 = new Rectangle()
-            {
-                Height = 1.5,
-                Width = 2,
-            };
-
-            Triangle triangle = new Triangle()
-            {
-                Height = 2,
-                Width = 34,
-            };
-
             Shape shape;
-
-            shape = new Square()
+            // Skapa själva uppgiften
+            Assignment assignment = new Assignment()
             {
-                Height=3,
-                Width=3
+                Number = 23
             };
 
-            // Uppdrag: Jag vill kunna spara alla figurer i en collection
-            char[] chars = new char[2];
-            chars[1] = 'b';
-            bool[] bools;
-            int[] integers;
-            Rectangle[] rectangles = new Rectangle[2];
+            // Skapa rätt figur till uppgiften
+            shape = Helper.CreateShape("Square", 2, 2);
+            assignment.AddShape(shape);
 
-            // skapa lista
-            List<Shape> shapes = new List<Shape>(); // flexibel eller dynamisk
-            shapes.Add(rectangle);
-            shapes.Add(rectangle2);
-            shapes.Add(triangle);
-            shapes.Add(shape);
-            foreach (Shape s in shapes)
-            {
-                MessageBox.Show($"En {s.Type} med höjden: {s.Height} och bredden: {s.Width} och area: {s.Area()}");
-            }
+            shape = Helper.CreateShape("Rectangle",1.5,2);
+            assignment.AddShape(shape);
+            assignment.AddShape(shape);
+            assignment.AddShape(shape);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            double bas, bas2, höjd, höjd2, totalArea, area1, area2;
-
-            area1 = Area(rectangle.Height, rectangle.Width);
-
-
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            // figur 1
-            bas = 2;
-            höjd = 2;
-            area1 = bas * höjd;
-
-
-            // figur 2
-            bas2 = 2;
-            höjd2 = 1.5;
-            area2 = bas2 * höjd2;
-
-            // total area
-            totalArea = area1 + area2;
-
-
-
-
+            List<Shape> shapes = assignment.GetShapes();
 
 
         }
