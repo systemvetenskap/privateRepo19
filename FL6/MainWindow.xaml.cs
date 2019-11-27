@@ -20,23 +20,28 @@ namespace FL6
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+        Shape shape;
+        List<Shape> shapes;
+
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        // Lägg inte metoden här, utan lägg den i rätt klass
-        private  double Area(double height, double width)
-        {
-            return height * width;
-        }
 
+        private void UpdateUI()
+        {
+            lstShapes.ItemsSource = null; // varför null? För att tömma listan
+            lstShapes.ItemsSource = shapes;
+
+            cboShapes.ItemsSource = null;
+            cboShapes.ItemsSource = shapes;
+            cboShapes.SelectedIndex = 0;
+        }
 
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Shape shape;
             // Skapa själva uppgiften
             Assignment assignment = new Assignment()
             {
@@ -46,15 +51,28 @@ namespace FL6
             // Skapa rätt figur till uppgiften
             shape = Helper.CreateShape("Square", 2, 2);
             assignment.AddShape(shape);
-
             shape = Helper.CreateShape("Rectangle",1.5,2);
             assignment.AddShape(shape);
+
+            shapes = assignment.GetShapes();
+
+
             assignment.AddShape(shape);
-            assignment.AddShape(shape);
-
-            List<Shape> shapes = assignment.GetShapes();
+            txtTotalArea.Text = assignment.TotalArea.ToString();
 
 
+            
+            UpdateUI();
+        }
+
+        private void BtnSelectShape_Click(object sender, RoutedEventArgs e)
+        {
+            Shape selectedShape;
+
+            //selectedShape= lstShapes.SelectedItem as Shape;
+
+            selectedShape = cboShapes.SelectedItem as Shape;
+            MessageBox.Show($"{selectedShape.Height}: {selectedShape.Width}");
         }
     }
 }

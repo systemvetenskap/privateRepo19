@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace FL6
 {
-    class Assignment //= kund
+    class Assignment 
     {
         public int Number { get; set; }
+        public double TotalArea => CalculateTotalArea();
 
         //  public List<Shape> Shapes { get; private set; }
         private List<Shape> shapes;
@@ -16,12 +17,22 @@ namespace FL6
         {
             shapes = new List<Shape>();
         }
+        // Beräkna totala arean
+        private double CalculateTotalArea()
+        {
+            double total = 0;
+            foreach (Shape s in shapes)
+            {
+                total += s.Area();
+            }
+            return total;
+        }
+            
 
-
-        public bool AddShape(Shape shape)
+    public bool AddShape(Shape shape)
         {
             
-            if (shapes.Count < 2)
+            if (shapes.Count < 100)
             {
                 shapes.Add(shape);
                 return true;
@@ -31,7 +42,7 @@ namespace FL6
 
         public List<Shape> GetShapes()
         {
-            return shapes.OrderBy(x => x.Height).ToList();
+            return shapes;
         }
 
     }

@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace FL6
 {
-    class Square : Shape
+    class Polygon : Shape
     {
-        public Square()
+        public Polygon(int numberOfCorners)
         {
-            Type = "Kvadrat";
+           NumberOfCorners = numberOfCorners;
         }
+        public Polygon() { }
     }
 }

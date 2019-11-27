@@ -53,18 +53,27 @@ namespace Yatzy
             isSaved[4] = (bool)chkDieFive.IsChecked;
             return isSaved;
         }
+
+        private void DisplayScore()
+        {
+            txtOnes.Text = gameEngine.Ones.ToString();
+            txtFives.Text = gameEngine.Fives.ToString();
+            txtTotal.Text = gameEngine.Total.ToString();
+            txtBonus.Text = gameEngine.Bonus.ToString();
+        }
         #endregion
 
 
         private void BtnRollDices_Click(object sender, RoutedEventArgs e)
         {
             bool[] savedDices = GetSavedDices();
-            DisplayDices(gameEngine.RoleDices());
+            DisplayDices(gameEngine.RoleDices(savedDices));
         }
 
         private void BtnSaveScore_Click(object sender, RoutedEventArgs e)
         {
-            int score = int.Parse(txtOnes.Text);
+            gameEngine.SaveScore(5);
+            DisplayScore();
 
         }
     }

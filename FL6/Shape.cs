@@ -13,13 +13,7 @@ namespace FL6
     class Shape 
     {
 
-        private int numberOfCorners;
-
-        public int NumberOfCorners
-        {
-            get { return numberOfCorners; }
-            set { numberOfCorners = value; }
-        }
+        public int NumberOfCorners { get; set; }
 
 
         public double Height { get; set; }
@@ -31,6 +25,11 @@ namespace FL6
         public virtual double Area()  // lägg till ordet virtual
         {
             return Height * Width;
+        }
+
+        public override string ToString()
+        {
+            return $"{Type}: {Area()} kvm";
         }
     }
 }

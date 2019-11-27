@@ -10,6 +10,8 @@ namespace Yatzy
     {
         // instansvariabel
         private Random random = new Random(); // skapa slumpgenerator = hemlig för omvärlden
+        private int[] dices = new int[5];
+
 
         // publika properties
         public int Ones { get; private set; }
@@ -18,9 +20,17 @@ namespace Yatzy
         public int Fours { get; private set; }
         public int Fives { get; private set; } // private setter 
         public int Sixes { get; private set; }
-        public int Bonus { get; private set; }
+        public int Bonus => CalculateBonus();
         public int Total => CalculateSum();
 
+        private int CalculateBonus()
+        {
+            if (CalculateSum() > 5)
+            {
+                return 50;
+            }
+            return 0;
+        }
         private int CalculateSum()
         {
             int totalSum = Ones + Twos + Threes + Fours + Fives + Sixes;
@@ -113,6 +123,30 @@ namespace Yatzy
 
         }
 
+        public void SaveScore(int category)
+        {
+            switch (category)
+            {
+                case 1:
+                    Ones = SumDices(1);
+                    break;
+                case 2:
+                    Twos = SumDices(2);
+                    break;
+                case 3:
+                    Threes = SumDices(3);
+                    break;
+                case 4:
+                    Fours = SumDices(4);
+                    break;
+                case 5:
+                    Fives = SumDices(5);
+                    break;
+                case 6:
+                    Sixes = SumDices(6);
+                    break;
+            }
+        }
         // Uppdrag: Gör en metod som kastar en tärning
         public int RoleDie()
         {
@@ -128,8 +162,6 @@ namespace Yatzy
         /// <returns></returns>
         public int[] RoleDices()
         {
-            int[] dices = new int[5];
-
             for (int i = 0; i < 5; i++)
             {
                 dices[i] = RoleDie();
@@ -144,13 +176,27 @@ namespace Yatzy
         /// <returns></returns>
         public int[] RoleDices(bool[] savedDices)
         {
-            int[] dices = new int[5];
-
             for (int i = 0; i < 5; i++)
             {
-                dices[i] = RoleDie();
+                if (!savedDices[i])
+                {
+                    dices[i] = RoleDie();
+                }
             }
             return dices;
+        }
+
+        private int SumDices(int category)
+        {
+            int sum = 0;
+            foreach(int die in dices)
+            {
+                if (die == category)
+                {
+                    sum += die;
+                }
+            }
+            return sum;
         }
     }
 }

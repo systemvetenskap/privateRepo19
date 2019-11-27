@@ -24,6 +24,12 @@ namespace FL6
                     Width = width
                 };
             }
+
+            else if (objectType.Equals("Polygon"))
+            {
+                shape = new Polygon();
+                
+            }
             else
             {
                 shape = new Rectangle()

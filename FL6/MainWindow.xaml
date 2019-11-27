@@ -5,9 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FL6"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="159,137,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <ListBox x:Name="lstShapes" HorizontalAlignment="Left" Height="207" VerticalAlignment="Top" Width="233" Margin="308,59,0,0"/>
+        <ComboBox x:Name="cboShapes" HorizontalAlignment="Left" Margin="594,233,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="txtTotalArea" HorizontalAlignment="Left" Margin="308,288,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" RenderTransformOrigin="0.33,-0.885"/>
+        <Button x:Name="btnSelectShape" Content="Välj" HorizontalAlignment="Left" Margin="584,74,0,0" VerticalAlignment="Top" Width="130" Height="54" Click="BtnSelectShape_Click"/>
 
     </Grid>
 </Window>
